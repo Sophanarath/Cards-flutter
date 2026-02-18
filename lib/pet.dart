@@ -1,5 +1,5 @@
 class Pet {
-  String? name;
-  String? animal;
-  Pet({this.name,this.animal});
+ final String name;
+ final String animal;
+  Pet({required this.name,required this.animal});
 }
