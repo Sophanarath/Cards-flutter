@@ -16,6 +16,7 @@ class CardHolder extends StatefulWidget {
 }
 
 class _CardHolderState extends State<CardHolder> {
+
   final List<Pet> pets= [
     Pet(name: 'Satan',animal: 'Sin of Wrath'),
     Pet(name: 'Lucifer',animal: 'Sin of Pride'),
@@ -28,6 +29,7 @@ class _CardHolderState extends State<CardHolder> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Pets Information'),
@@ -41,9 +43,8 @@ class _CardHolderState extends State<CardHolder> {
           children: pets.map((pet) => PetCard(pet: pet)).toList()
       ),
       )
-
-
     );
+
   }
 }
 

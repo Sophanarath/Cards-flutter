@@ -7,13 +7,8 @@ class PetCard extends StatelessWidget {
   const PetCard({super.key, required this.pet});
   @override
   Widget build(BuildContext context) {
-    return   Container(
+    return   Card(
               margin: EdgeInsets.only(bottom: 10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red[900],
-              ),
               child:
               Column(
                 spacing: 10,
