@@ -3,8 +3,9 @@ import 'pet.dart';
 class PetCard extends StatelessWidget {
 
   final Pet pet;
+  final VoidCallback onDelete;
 
-  const PetCard({super.key, required this.pet});
+  const PetCard({super.key, required this.pet, required this.onDelete});
   @override
   Widget build(BuildContext context) {
     return   Card(
@@ -15,7 +16,12 @@ class PetCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(pet.name),
-                  Text(pet.animal)
+                  Text(pet.animal),
+                  ElevatedButton(
+                    onPressed: onDelete,
+                    child: Text('Delete'),
+                  ),
+                  SizedBox(height: 10),
                 ],
               )
               );

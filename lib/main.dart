@@ -36,12 +36,25 @@ class _CardHolderState extends State<CardHolder> {
         centerTitle: true,
         backgroundColor: Colors.grey[200],
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: pets.map((pet) => PetCard(pet: pet)).toList()
-      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: pets.asMap().entries.map((entry) {
+              int index = entry.key;
+              Pet pet = entry.value;
+              return PetCard(
+                pet: pet,
+                onDelete: () {
+                  setState(() {
+                    pets.removeAt(index);
+                  });
+                }
+              );
+            }).toList()
+        ),
+        )
       )
     );
 
